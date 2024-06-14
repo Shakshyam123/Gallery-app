@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Table of Contents
 
-## Getting Started
+- [About](#about)
+- [Features](#features)
+- [Overview](#overview)
+- [Screenshot](#screenshot)
+- [Installation](#installation)
+- [Prerequisites](#prerequisites)
+- [Usage](#Usage)
+- [ GameLogic](#gamelogic)
+- [Contributing](#contributing)
 
-First, run the development server:
+# About
+
+This is a simple Tic Tac Toe game implemented in JavaScript, HTML, and CSS. The game allows two players to take turns and play Tic Tac Toe on a 3x3 grid. The first player to align three marks in a row, column, or diagonal wins the game.
+
+## Features
+
+- Two-player gameplay
+- Interactive 3x3 grid
+- Highlight winning combination
+- Reset button to start a new game
+
+## Screenshot
+
+![Screenshot](./images/tic tac toe.png)
+
+### Prerequisites
+
+You will need a modern web browser to run this game.
+
+## Installation
+
+Step-by-step instructions on how to get the development environment running.
 
 ```bash
-npm run dev
-# or
+git clone https://github.com/Shakshyam123/tic-tac-toe.git
+cd Shakshyam-tic-tac-toe
+yarn install
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. Open the game in your web browser.
+2. Player 1 (X) and Player 2 (O) take turns clicking on the empty cells of the grid.
+3. The game automatically checks for a win or a draw after each move.
+4. The game highlights the winning combination if there is a winner.
+5. Click the "Reset" button to start a new game.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Game Logic
 
-## Learn More
+The game logic checks for the following winning combinations:
 
-To learn more about Next.js, take a look at the following resources:
+- Horizontal rows
+- Vertical columns
+- Diagonal lines
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The function `checkWinner(state, winnerLogic)` iterates through the predefined winning combinations and determines if there is a winner.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Contributing
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+If you would like to contribute to the project, please fork the repository and submit a pull request. We appreciate any contributions!
