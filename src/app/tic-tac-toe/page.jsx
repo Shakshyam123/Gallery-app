@@ -29,6 +29,9 @@ function Board() {
   const isWinner = checkWinner();
   console.log("hello", isWinner);
   function handleClicked(index) {
+    if (state[index] !== null) {
+      return;
+    }
     const copyState = [...state];
     copyState[index] = isXTurn ? "X" : "O";
     setState(copyState);
@@ -39,21 +42,26 @@ function Board() {
     setState(Array(9).fill(null));
   }
   return (
-    <div className="ml-10">
+    <div className="">
       {isWinner ? (
         <>
-          {isWinner} won the game
-          <button
-            onClick={handleReset}
-            className="border-2 p-2 rounded-lg bg-slate-700 text-white ml-4"
-          >
-            play again
-          </button>
+          <div className="flex flex-col justify-center items-center border-2 w-96 h-72 rounded-lg ml-96 bg-zinc-600">
+            <h1 className="font-extrabold text-3xl">
+              {" "}
+              {isWinner} won the game
+            </h1>
+            <button
+              onClick={handleReset}
+              className="border-2 p-2 rounded-lg bg-slate-700 text-white ml-4"
+            >
+              play again
+            </button>
+          </div>
         </>
       ) : (
         <>
           <h1 className="text-5xl font-extrabold text-center ">Tic Tac Toe</h1>
-          <div className=" flex justify-evenly items-center ">
+          <div className=" flex  items-center justify-center">
             <Square onClick={() => handleClicked(0)} value={state[0]} />
             <Square
               value={state[1]}
@@ -68,7 +76,7 @@ function Board() {
               }}
             />
           </div>
-          <div className=" flex  justify-evenly items-center  ">
+          <div className=" flex   items-center justify-center ">
             <Square
               value={state[3]}
               onClick={() => {
@@ -88,7 +96,7 @@ function Board() {
               }}
             />
           </div>
-          <div className=" flex  justify-evenly items-center">
+          <div className=" flex   items-center justify-center">
             <Square
               value={state[6]}
               onClick={() => {
